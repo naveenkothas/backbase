@@ -12,7 +12,12 @@ Implemented Jersey Rest Client and Service.
 
 Written Junit Test Cases to RestClient.
 
-Implemented using Tomcat7.
+Implemented using Tomcat7 server.
+
+
+Technologies:
+
+Jersey Restful webservice.
 
 Tools Used:
 
