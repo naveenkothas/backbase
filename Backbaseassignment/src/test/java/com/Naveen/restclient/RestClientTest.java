@@ -14,14 +14,12 @@ public class RestClientTest {
 	
 	private RestClient client = new RestClient();
 
-	/*@Test
+	@Test
 	public void givenCorrectObject_whenCorrectJsonRequest_thenResponseCodeCreated() {
 
-		int accountid = 12345;
+		String response =  client.getAccountTransactions().toString();
 
-		Response response = (Response) client.getAccountTransactions(accountid);
-
-		assertEquals(response.getStatus(), HTTP_CREATED);
-	}*/
+		assertEquals(Response.status(201).entity(response).build().getStatus(), HTTP_CREATED);
+	}
 
 }
