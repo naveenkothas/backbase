@@ -6,7 +6,7 @@ http://localhost:8080/Backbaseassignment/banks/rbs/accounts/savings-kids-john/pu
 
 Implemented logger functionality using log4j
 
-Implementation completed by using JAX-RS jersey implementation using Restful web service  
+Implementation completed by using JAX-RS jersey  Restful web service. 
 
 Implemented Jersey Rest Client and Service.
 
