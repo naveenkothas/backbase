@@ -11,12 +11,16 @@ public class RestClient {
 
   private Client client = ClientBuilder.newClient();
 
-  public Object getAccountTransactions(int id) {
+  public Object getAccountTransactions() {
       return client
         .target(REST_URI)
-        .path(String.valueOf(id))
         .request(MediaType.APPLICATION_JSON)
         .get(Object.class);
+  }
+  
+  public static void main(String args[]){
+	  RestClient restClient=new RestClient();
+	  System.out.println(restClient.getAccountTransactions());
   }
 
 }
