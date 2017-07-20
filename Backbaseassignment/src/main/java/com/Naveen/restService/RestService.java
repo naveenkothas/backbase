@@ -7,7 +7,9 @@ import javax.ws.rs.core.Response;
 
 import org.apache.log4j.Logger;
 
-@Path("/abc")
+import com.Naveen.restclient.RestClient;
+
+@Path("/")
 public class RestService {
 	
 	final static Logger logger = Logger.getLogger(RestService.class);
@@ -23,24 +25,25 @@ public class RestService {
 		return Response.status(200).entity(output).build();
 
 	}
-	
+	//to Fetch the Transaction List
 	@GET
 	@Path("/rbs/accounts/savings-kids-john/public/transactions")
-	public Response getTransactionList() {
+	public Object getTransactionList() {
+		logger.debug("Started getTransactionList");
+		
+		RestClient restClient=new RestClient();
+		return restClient.getAccountTransactions();
 
-		String output = "Jersey say : " ;
-
-		return Response.status(200).entity(output).build();
 
 	}
 	
+	//Fetch transactions by account id
 	@GET
-	@Path("/rbs/accounts/savings-kids-john/public/transactions1")
-	public Response getTransactionListBasedonFilter() {
-
-		String output = "Jersey say : " ;
-
-		return Response.status(200).entity(output).build();
+	@Path("/rbs/accounts/savings-kids-john/public/transactions/{Accountid}")
+	public Response getTransactionListBasedonFilter(@PathParam("Accountid") int  Accountid) {
+		logger.debug("Started getTransactionListBasedonFilter");
+		RestClient restClient=new RestClient();
+		return restClient.getAccountTransactions(Accountid);
 
 	}
 

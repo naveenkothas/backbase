@@ -3,6 +3,7 @@ package com.Naveen.restclient;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 public class RestClient {
 	
@@ -15,6 +16,14 @@ public class RestClient {
       return client
         .target(REST_URI)
         .request(MediaType.APPLICATION_JSON)
+        .get(Object.class);
+  }
+  
+  public Response getAccountTransactions(int accountid) {
+	  return (Response) client
+	          .target(REST_URI)
+	          .path(String.valueOf(accountid))
+	          .request(MediaType.APPLICATION_JSON)
         .get(Object.class);
   }
   
