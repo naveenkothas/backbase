@@ -27,7 +27,7 @@ public class RestService {
 	}
 	//to Fetch the Transaction List
 	@GET
-	@Path("/rbs/accounts/savings-kids-john/public/transactions")
+	@Path("/rbs/accounts/transactions")
 	public Object getTransactionList() {
 		logger.debug("Started getTransactionList");
 		
@@ -39,7 +39,7 @@ public class RestService {
 	
 	//Fetch transactions by account id
 	@GET
-	@Path("/rbs/accounts/savings-kids-john/public/transactions/{Accountid}")
+	@Path("/rbs/accounts/transactions/{Accountid}")
 	public Response getTransactionListBasedonFilter(@PathParam("Accountid") int  Accountid) {
 		logger.debug("Started getTransactionListBasedonFilter");
 		RestClient restClient=new RestClient();
